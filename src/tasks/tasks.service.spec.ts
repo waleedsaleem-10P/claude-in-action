@@ -3,14 +3,15 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { NotFoundException } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { Task, TaskStatus } from './task.entity';
+import { User } from '../users/user.entity';
 
 const mockTask: Task = {
   id: 1,
   title: 'Original title',
   description: 'Original description',
   status: TaskStatus.OPEN,
-  userId: null,
-  user: null,
+  userId: undefined as unknown as number,
+  user: undefined as unknown as User,
 };
 
 const mockRepository = {
